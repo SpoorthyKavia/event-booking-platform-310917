@@ -1,4 +1,3 @@
-from src.models import User, Event
 from src.schemas import UserCreate, UserOut, EventCreate, EventOut
 from datetime import datetime
 

@@ -1,10 +1,22 @@
 # Backend Test Suite
 
-- Run local: `pytest`
-- Uses SQLite database in tests (fresh per session, no impact on dev/prod).
-- Add more tests in this folder to cover the FastAPI API, models, and schemas.
+## How to Run Backend Tests
 
-Structure:
-- `conftest.py` - DB setup and app client
-- `test_api_main.py` - API endpoint tests for health+auth example
-- `factories.py` - For user/event/booking creation in DB during tests
+1. Install dependencies  
+   ```
+   pip install -r requirements.txt
+   pip install -r requirements-test.txt
+   ```
+
+2. Run tests  
+   ```
+   pytest
+   ```
+
+- Database: Tests use SQLite in-memory or local test DB (see conftest.py), so no dev/prod DB is touched.
+- Structure:
+  - `conftest.py` – test DB/session setup and FastAPI app client fixture (overrides normal DB).
+  - `test_api_main.py` – core API endpoint test coverage (health & auth flows).
+  - `test_models_schemas.py` – model/schema validation tests.
+  - `factories.py` – helpers for test data creation.
+- Add more tests in this folder for FastAPI API, models, schemas, and background logic.

@@ -4,7 +4,6 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy_utils import create_database, database_exists, drop_database
 
 # Ensure src/ is importable
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))

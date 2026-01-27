@@ -4,7 +4,7 @@ certifi==2025.1.31
 click==8.1.8
 dnspython==2.7.0
 email_validator==2.2.0
-fastapi==0.115.12
+fastapi==0.115.2
 fastapi-cli==0.0.7
 flake8==7.2.0
 h11==0.14.0
@@ -25,7 +25,6 @@ pydantic==2.11.3
 pydantic_core==2.33.1
 pyflakes==3.3.2
 Pygments==2.19.1
-pytest==8.3.5
 python-dotenv==1.1.0
 python-multipart==0.0.20
 PyYAML==6.0.2
@@ -41,7 +40,13 @@ uvicorn==0.34.0
 uvloop==0.21.0
 watchfiles==1.0.5
 websockets==15.0.1
+
 sqlalchemy
 psycopg2-binary
 passlib[bcrypt]
-python-jose
+python-jose[cryptography]
+pydantic
+python-dotenv
+httpx
+
+# The following are for local/postgres and are not required for tests if using sqlite in testing
